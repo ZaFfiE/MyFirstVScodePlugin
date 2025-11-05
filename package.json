@@ -1,0 +1,49 @@
+{
+  "name": "case_converter",
+  "displayName": "Case Converter",
+  "description": "Convert text between different case styles with auto-detection",
+  "version": "1.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:case_converter.convert"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "case_converter.convert",
+        "title": "Convert Case",
+        "category": "Case Converter"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "case_converter.convert",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "case_converter.convert",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "echo No compilation needed",
+    "watch": "echo No watcher needed"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0"
+  }
+}
